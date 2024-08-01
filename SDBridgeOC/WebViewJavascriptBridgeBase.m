@@ -72,8 +72,9 @@
         
         if (!handler) {
             NSLog(@"WVJBNoHandlerException, No handler for message from JS: %@", message);
+        } else {
+            handler(message[@"data"], responseCallback);
         }
-        handler(message[@"data"], responseCallback);
     }
 }
 
